@@ -19,8 +19,8 @@ wget https://raw.githubusercontent.com/ansible-collections/azure/dev/requirement
 sudo pip3 install -r requirements-azure.txt
 
 ## Create a credentials file to store azure credentials
-mkdir /home/AnsibleVMAdmin/.azure
-cat > /home/AnsibleVMAdmin/.azure/credentials EOF <<
+sudo mkdir /home/AnsibleVMAdmin/.azure
+sudo cat > /home/AnsibleVMAdmin/.azure/credentials EOF <<
 [default]
 subscription_id=2c8cb0b6-be4a-41ea-9904-5917a35f0cd5
 client_id=8790493b-2fdd-4482-bb59-25002a15fb1b
