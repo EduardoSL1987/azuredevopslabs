@@ -19,8 +19,8 @@ wget -O /home/AnsibleVMAdmin/requirements-azure.txt https://raw.githubuserconten
 sudo pip3 install -r /home/AnsibleVMAdmin/requirements-azure.txt
 
 ## Create a credentials file to store azure credentials
-mkdir ~/.azure
-cat > ~/.azure/credentials <<EOF
+mkdir /home/AnsibleVMAdmin/.azure
+cat > /home/AnsibleVMAdmin/.azure/credentials <<EOF
 [default]
 subscription_id=2c8cb0b6-be4a-41ea-9904-5917a35f0cd5
 client_id=8790493b-2fdd-4482-bb59-25002a15fb1b
@@ -29,5 +29,5 @@ tenant=c8cd0425-e7b7-4f3d-9215-7e5fa3f439e8
 EOF
 
 ##Generating Key Pair
-ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
-cat ~/.ssh/id_rsa.pub > ~/.ssh/authorized_keys
+ssh-keygen -t rsa -N "" -f /home/AnsibleVMAdmin/.ssh/id_rsa
+cat /home/AnsibleVMAdmin/.ssh/id_rsa.pub > /home/AnsibleVMAdmin/.ssh/authorized_keys
