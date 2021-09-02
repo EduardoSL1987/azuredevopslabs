@@ -29,5 +29,5 @@ tenant=c8cd0425-e7b7-4f3d-9215-7e5fa3f439e8
 EOF
 
 ##Generating Key Pair
-ssh-keygen -t rsa -N ""
+ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
 cat ~/.ssh/id_rsa.pub > ~/.ssh/authorized_keys
