@@ -13,10 +13,10 @@ pip3 install ansible
 ansible-galaxy collection install azure.azcollection
 
 # Get required modules for Ansible on Azure list
-wget https://raw.githubusercontent.com/ansible-collections/azure/dev/requirements-azure.txt
+wget -O /home/AnsibleVMAdmin/requirements-azure.txt https://raw.githubusercontent.com/ansible-collections/azure/dev/requirements-azure.txt 
 
 # Install Ansible modules for Azure
-sudo pip3 install -r requirements-azure.txt
+sudo pip3 install -r /home/AnsibleVMAdmin/requirements-azure.txt
 
 ## Create a credentials file to store azure credentials
 sudo mkdir /home/AnsibleVMAdmin/.azure
