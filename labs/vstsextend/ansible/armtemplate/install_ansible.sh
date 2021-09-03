@@ -1,22 +1,19 @@
 #!/bin/bash
 
-## Update and upgrade the packages
-sudo apt update && sudo apt dist-upgrade -y
+# Update all packages that have available updates.
+sudo apt update -y
 
-## Install pre-requisite packages
+# Install Python 3 and pip.
 sudo apt install -y python3-pip
 
+# Upgrade pip3.
+sudo pip3 install --upgrade pip
+
 # Install Ansible.
-pip3 install ansible
+pip3 install "ansible==2.9.17"
 
-# Install Ansible az collection for interacting with Azure.
-ansible-galaxy collection install azure.azcollection
-
-# Get required modules for Ansible on Azure list
-wget -O /home/AnsibleVMAdmin/requirements-azure.txt https://raw.githubusercontent.com/ansible-collections/azure/dev/requirements-azure.txt 
-
-# Install Ansible modules for Azure
-sudo pip3 install -r /home/AnsibleVMAdmin/requirements-azure.txt
+# Install Ansible azure_rm module for interacting with Azure.
+pip3 install ansible[azure]
 
 ## Create a credentials file to store azure credentials
 sudo -u AnsibleVMAdmin mkdir /home/AnsibleVMAdmin/.azure
